@@ -1,4 +1,4 @@
-<!-- Get the current number of the day of the week and display it in the console. -->
+<!-- Get the current number of the month and display it in the console. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,8 @@
 <body>
     <script>
     const currentDate = new Date();
-    console.log("This is the " + currentDate.getDay() + " day of the week.");
+    const currentMonth = currentDate.getMonth() + 1; // Months are zero-based
+    console.log("This is the " + currentMonth + " month of the year.");
     </script>
 </body>
 </html>
