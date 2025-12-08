@@ -1,0 +1,35 @@
+<!-- Calculate age based on user-inputted birth date and display it in the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <label for="birthDay">Enter your birth day:</label>
+    <input type="number" id="birthDay" min="1" max="31" />
+    <label for="birthMonth">Enter your birth month:</label>
+    <input type="number" id="birthMonth" min="1" max="12" />
+    <label for="birthYear">Enter your birth year:</label>
+    <input type="number" id="birthYear"/>
+    <button onclick="calculateAge()">Calculate Age</button>
+    <script>
+        function calculateAge() {
+            const day = document.getElementById("birthDay").value;
+            const month = document.getElementById("birthMonth").value - 1;
+            const year = document.getElementById("birthYear").value;
+            const birthDate = new Date(year, month, day);
+            const currentDate = new Date();
+            let age = currentDate.getFullYear() - birthDate.getFullYear();
+            const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+            const dayDiff = currentDate.getDate() - birthDate.getDate();
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+            console.log("Your age is: " + age + " years.");
+        }
+    </script>
+</body>
+</html>
