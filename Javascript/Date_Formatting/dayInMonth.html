@@ -1,0 +1,21 @@
+<!-- Insert a number of of a month and display the number of days in it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="monthInput" placeholder="Enter month number (1-12)"/>
+    <button onclick="getDaysInMonth()">Get Days in Month</button>
+    <script>
+        function getDaysInMonth() {
+            const month = document.getElementById("monthInput").value; 
+            const daysInMonth = new Date(2025, month, 0).getDate();
+            console.log("There are " + daysInMonth + " days in this month");
+        }
+    </script>
+</body>
+</html>
